@@ -6,7 +6,7 @@ body {
 date {
     font-family: arial, sans-serif;
     color: #333;
-    font-size:12px;
+    font-size:16px;
     font-weight: bold;
     line-height: 1.5;
     font-smooth: never;
@@ -15,7 +15,7 @@ date {
 p {
     font-family: arial, sans-serif;
     color: #333;
-    font-size:12px;
+    font-size:16px;
     font-weight: normal;
     line-height: 1.5;
     font-smooth: never;
