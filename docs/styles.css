@@ -1,10 +1,19 @@
+@font-face {
+    font-family: 'bluFont';
+    src: url('css/pixearg_-webfont.woff2') format('woff2'),
+         url('css/pixearg_-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 body {
     background: #cccccc;
     padding-left: 100px;
 }
 
 date {
-    font-family: arial, sans-serif;
+    
     color: #333;
     font-size:16px;
     font-weight: bold;
