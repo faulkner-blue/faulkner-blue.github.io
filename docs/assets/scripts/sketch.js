@@ -18,8 +18,8 @@ function setup() {
 //THE JUICE
 function reset() {
     pixelDensity(1);
-   pageW = document.documentElement.clientWidth;//windowWidth;
-   pageH = document.documentElement.clientHeight; //windowHeight;
+   pageW = document.documentElement.offsetWidth;//windowWidth;
+   pageH = document.documentElement.offsetHeight; //windowHeight;
     MOBILE = (pageW <= 600) && (pageH <= 860);
   var myCanvas = createCanvas(pageW,pageH); //document.getElementById("body").scrollWidth, document.getElementById("body").scrollHeight, WEBGL);
   myCanvas.parent("wallpaper");
