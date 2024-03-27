@@ -9,7 +9,7 @@ let table = [208,45,100,
 
 var pageW = 0;  // document.getElementById("body").scrollWidth;
 var pageH = 0; //document.getElementById("body").scrollHeight * 1.25;
-var MOBILE = 0;
+var MOBILE = false;
 
 function setup() {
     reset();
@@ -18,10 +18,22 @@ function setup() {
 //THE JUICE
 function reset() {
    pixelDensity(1);
+    // desktop
+    if (typeof screen.orientation !== 'undefined'){
+        MOBILE = false;
+        pageW = document.documentElement.clientWidth;//windowWidth;
+        pageH = document.documentElement.clientHeight; //windowHeight; 
+    }
+    // mobile
+    else {
+        MOBILE = true;
+        pageW = document.documentElement.offsetWidth;//windowWidth;
+        pageH = document.documentElement.offsetHeight; //windowHeight; 
+    }
 
-    pageW = document.documentElement.clientWidth;//windowWidth;
-    pageH = document.documentElement.clientHeight; //windowHeight; 
-    MOBILE = (pageW <= 600) && (pageH <= 860);
+    //pageW = document.documentElement.clientWidth;//windowWidth;
+    //pageH = document.documentElement.clientHeight; //windowHeight; 
+    //MOBILE = (pageW <= 600) && (pageH <= 860);
   var myCanvas = createCanvas(pageW,pageH); //document.getElementById("body").scrollWidth, document.getElementById("body").scrollHeight, WEBGL);
   myCanvas.parent("wallpaper");
   myCanvas.position(0,0);
