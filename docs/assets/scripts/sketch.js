@@ -1,14 +1,17 @@
-let table;
-
-function preload() {
-  table = loadTable("./docs/assets/scripts/colors.csv", "csv", "header");
-}
+let table = [208,45,100,
+             197,21,100,
+             174,8,100,
+             240,0,94,
+             96,47,85,
+             107,46,60];
 
 function setup() {
   var myCanvas = createCanvas(windowWidth, windowHeight);
   myCanvas.parent("wallpaper");
+  myCanvas.position(0,0);
+  myCanvas.style('z-index','-1');
     
-  background(255);
+  background(0);
   angleMode(DEGREES);
   colorMode(HSB, 360, 100, 100, 255);
   
@@ -24,6 +27,10 @@ function setup() {
     fill(2);
     rect(400,400,40,40);
   
+}
+
+function draw() {
+    background(0);
 }
 
 class shape {
@@ -49,13 +56,13 @@ class shape {
 
 function getColor(id, hsb) {
   if(hsb==0){   
-    return(int(table.get(0, id * 3))); 
+    return(int(table[id * 3])); 
   }
   else if(hsb==1){ 
-    return( int(table.get(0, id * 3 + 1)));
+    return( int(table[id * 3 + 1]));
   }
   else{
-    return( int(table.get(0, id * 3 + 2)));
+    return( int(table[id * 3 + 2]));
   }
 
 }
