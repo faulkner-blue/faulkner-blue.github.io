@@ -9,6 +9,7 @@ let table = [208,45,100,
 
 var pageW = 0;  // document.getElementById("body").scrollWidth;
 var pageH = 0; //document.getElementById("body").scrollHeight * 1.25;
+var MOBILE = 0;
 
 function setup() {
     reset();
@@ -20,6 +21,7 @@ function reset() {
     pixelDensity(1);
    pageW = windowWidth;
    pageH = windowHeight;
+    MOBILE = (pageW <= 860) && (pageH <= 600);
   var myCanvas = createCanvas(pageW,pageH); //document.getElementById("body").scrollWidth, document.getElementById("body").scrollHeight, WEBGL);
   myCanvas.parent("wallpaper");
   myCanvas.position(0,0);
@@ -36,7 +38,13 @@ function reset() {
 //drawingContext.filter = 'blur('15px)';
   for(let i = 0; i < shapeCount; i++){ 
     push();
-    drawingContext.filter = 'blur('+str(random(2,40))+'px)';
+      if(MOBILE){
+          filter(BLUR, random(2,20));
+      }
+      else{
+        drawingContext.filter = 'blur('+str(random(2,40))+'px)';
+      }
+
     translate(random(0, pageW),random(0, pageH));
     rotate(random(0,360));
     let square = new shape(i,mod);    
@@ -44,8 +52,11 @@ function reset() {
   }
 }
 
+
 function windowResized() {
-    reset();
+    if (!MOBILE){
+        reset();
+    }
 }
 
 class shape {
