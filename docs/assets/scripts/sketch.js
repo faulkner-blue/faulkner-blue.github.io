@@ -1,7 +1,7 @@
 let table;
 
 function preload() {
-  table = loadTable("./colors.csv", "csv", "header");
+  table = loadTable("./docs/assets/scripts/colors.csv", "csv", "header");
 }
 
 function setup() {
@@ -25,8 +25,6 @@ function setup() {
     rect(400,400,40,40);
   
 }
-
-function draw() {} //nothing dynamic, yet
 
 class shape {
   constructor(id,mod) {
