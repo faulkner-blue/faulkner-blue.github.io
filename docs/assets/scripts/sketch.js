@@ -13,14 +13,13 @@ var MOBILE = 0;
 
 function setup() {
     reset();
-
 }
 
 //THE JUICE
 function reset() {
     pixelDensity(1);
-   pageW = windowWidth;
-   pageH = windowHeight;
+   pageW = document.documentElement.clientWidth;//windowWidth;
+   pageH = document.documentElement.clientHeight; //windowHeight;
     MOBILE = (pageW <= 600) && (pageH <= 860);
   var myCanvas = createCanvas(pageW,pageH); //document.getElementById("body").scrollWidth, document.getElementById("body").scrollHeight, WEBGL);
   myCanvas.parent("wallpaper");
@@ -38,10 +37,7 @@ function reset() {
 //drawingContext.filter = 'blur('15px)';
   for(let i = 0; i < shapeCount; i++){ 
     push();
-      if(MOBILE){
-          filter(BLUR, random(2,20));
-      }
-      else{
+      if(!MOBILE){
         drawingContext.filter = 'blur('+str(random(2,40))+'px)';
       }
 
@@ -50,6 +46,9 @@ function reset() {
     let square = new shape(i,mod);    
     pop();
   }
+    if(MOBILE){
+        filter(BLUR, random(2,20));
+    }
 }
 
 
