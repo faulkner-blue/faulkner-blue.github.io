@@ -16,7 +16,7 @@
 
 
 body {
-    background: #cccccc;
+   //background: #cccccc;
     padding-left: 10%;
 }
 
@@ -41,6 +41,12 @@ p {
     max-width: 30%;
     margin-top: 5px;
 }
+
+/*
+#wallpaper {
+    position: fixed;
+}
+*/
 
 /* if mobile device max width 480px */
 @media (max-width: 480px) {
