@@ -9,7 +9,7 @@ let table = [208,45,100,
 
 var pageW = 0;  // document.getElementById("body").scrollWidth;
 var pageH = 0; //document.getElementById("body").scrollHeight * 1.25;
-var MOBILE = false;
+var MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 function setup() {
     reset();
@@ -19,14 +19,12 @@ function setup() {
 function reset() {
    pixelDensity(1);
     // desktop
-    if (typeof screen.orientation !== 'undefined'){
-        MOBILE = false;
+    if (!MOBILE){
         pageW = document.documentElement.clientWidth;//windowWidth;
         pageH = document.documentElement.clientHeight; //windowHeight; 
     }
     // mobile
     else {
-        MOBILE = true;
         pageW = document.documentElement.offsetWidth;//windowWidth;
         pageH = document.documentElement.offsetHeight; //windowHeight; 
     }
