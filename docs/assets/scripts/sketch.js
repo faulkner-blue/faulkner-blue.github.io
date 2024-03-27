@@ -25,7 +25,7 @@ function reset() {
     }
     // mobile
     else {
-        pageW = document.documentElement.clientWidth;
+        pageW = window.innerWidth;
         pageH = document.documentElement.offsetHeight; 
     }
 
