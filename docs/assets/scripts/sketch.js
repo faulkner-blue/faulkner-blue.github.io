@@ -20,13 +20,13 @@ function reset() {
    pixelDensity(1);
     // desktop
     if (!MOBILE){
-        pageW = document.documentElement.clientWidth;//windowWidth;
-        pageH = document.documentElement.clientHeight; //windowHeight; 
+        pageW = document.documentElement.clientWidth;
+        pageH = document.documentElement.clientHeight; 
     }
     // mobile
     else {
-        pageW = document.documentElement.offsetWidth;//windowWidth;
-        pageH = document.documentElement.offsetHeight; //windowHeight; 
+        pageW = document.documentElement.clientWidth;
+        pageH = document.documentElement.offsetHeight; 
     }
 
     //pageW = document.documentElement.clientWidth;//windowWidth;
