@@ -5,44 +5,52 @@ let table = [208,45,100,
              96,47,85,
              107,46,60];
 
+const pageW = document.getElementById("body").scrollWidth;
+const pageH = document.getElementById("body").scrollHeight * 1.25;
+
 function setup() {
-  var myCanvas = createCanvas(windowWidth, windowHeight);
-  myCanvas.parent("wallpaper");
-  myCanvas.position(0,0);
-  myCanvas.style('z-index','-1');
     
+  var myCanvas = createCanvas(pageW,pageH); //document.getElementById("body").scrollWidth, document.getElementById("body").scrollHeight, WEBGL);
+//  myCanvas.parent("wallpaper");
+  myCanvas.position(0,0);
+  myCanvas.style('z-index','-1');    
   background(255);
   angleMode(DEGREES);
   colorMode(HSB, 360, 100, 100, 255);
-  
-  var shapeCount = 20;
-  var mod = (random(2,shapeCount));
-  
-  for(let i = 0; i < shapeCount; i++){ 
-    let square = new shape(i,mod);
     
+  var shapeCount = 25;
+  var mod = (random(2,shapeCount));
+   
+  drawingContext.filter = 'blur(15px)';
+  for(let i = 0; i < shapeCount; i++){ 
+    push();
+    translate(random(0, pageW),random(0, pageH));
     rotate(random(0,360));
-    filter(BLUR, random(5,30));
+    let square = new shape(i,mod);
+          
+    pop();
   }
+    
 }
 
 
 class shape {
   constructor(id,mod) {
-    this.x = random(0, width);
-    this.y = random(0, height);
-    this.w = random(5, windowWidth/2.);
-    this.h = random(5, windowHeight/2.);
-        
+//    this.x = random(0, pageW);
+//    this.y = random(0, pageH);
+    this.w = random(pageW*.05, pageW/1.25);
+    this.h = random(pageW*.05, pageH/1.5);
+    
+    id = id % (table.length / 3);  
     noStroke();
-    fill(getColor(id,0), getColor(id,1), getColor(id,2)); //get color from table
+    fill(getColor(id,0), getColor(id,1), getColor(id,2), random(25,255)); //get color from table
     
     // basic logic to select between different shapes
     if(id%mod > 2){
-      rect(this.x, this.y, this.w, this.h);
+      rect(0, 0, this.w, this.h);
     }
     else{
-      ellipse(this.x,this.y,this.w,this.h);
+      ellipse(0,0,this.w,this.h);
     }
     
   }
