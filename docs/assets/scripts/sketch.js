@@ -38,12 +38,12 @@ class shape {
   constructor(id,mod) {
 //    this.x = random(0, pageW);
 //    this.y = random(0, pageH);
-    this.w = random(pageW*.05, pageW/1.25);
-    this.h = random(pageW*.05, pageH/1.5);
+    this.w = random(pageW*.025, pageW/1.25);
+    this.h = random(pageW*.025, pageH/1.5);
     
     id = id % (table.length / 3);  
     noStroke();
-    fill(getColor(id,0), getColor(id,1), getColor(id,2), random(25,255)); //get color from table
+    fill(getColor(id,0), getColor(id,1), getColor(id,2), random(30,255)); //get color from table
     
     // basic logic to select between different shapes
     if(id%mod > 2){
