@@ -21,7 +21,7 @@ function reset() {
     pixelDensity(1);
    pageW = windowWidth;
    pageH = windowHeight;
-    MOBILE = (pageW <= 860) && (pageH <= 600);
+    MOBILE = (pageW <= 600) && (pageH <= 860);
   var myCanvas = createCanvas(pageW,pageH); //document.getElementById("body").scrollWidth, document.getElementById("body").scrollHeight, WEBGL);
   myCanvas.parent("wallpaper");
   myCanvas.position(0,0);
