@@ -11,11 +11,11 @@ function setup() {
   myCanvas.position(0,0);
   myCanvas.style('z-index','-1');
     
-  background(0);
+  background(255);
   angleMode(DEGREES);
   colorMode(HSB, 360, 100, 100, 255);
   
-  var shapeCount = 5;
+  var shapeCount = 20;
   var mod = (random(2,shapeCount));
   
   for(let i = 0; i < shapeCount; i++){ 
@@ -24,14 +24,8 @@ function setup() {
     rotate(random(0,360));
     filter(BLUR, random(5,30));
   }
-    fill(2);
-    rect(400,400,40,40);
-  
 }
 
-function draw() {
-    background(0);
-}
 
 class shape {
   constructor(id,mod) {
