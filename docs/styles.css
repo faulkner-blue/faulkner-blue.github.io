@@ -43,7 +43,7 @@ body {
 date {
     
     color: #333;
-    font-size:16px;
+    font-size:1em;
     font-weight: bold;
     font-family: arial, sans-serif;
 }
@@ -53,10 +53,20 @@ img {
     height: 30%;
 }
 
+a {
+    font-family: arial, sans-serif;
+    color: lightgray;
+    font-size:1em;
+    font-weight: normal;
+    line-height: 1.25;
+    max-width: 30%;
+    margin-top: 5px;
+}
+
 p {
     font-family: arial, sans-serif;
     color: #333;
-    font-size:16px;
+    font-size:1em;
     font-weight: normal;
     line-height: 1.25;
     max-width: 30%;
